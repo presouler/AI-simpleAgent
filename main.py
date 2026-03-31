@@ -4,6 +4,8 @@ import os
 load_dotenv()
 
 api_key = os.getenv("OPENROUTER_API_KEY")
+if not api_key:
+    raise SystemExit("Error: OPENROUTER_API_KEY is not set.")
 
 with OpenRouter(
     # api_key=os.getenv("OPENROUTER_API_KEY")
